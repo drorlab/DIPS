@@ -1,0 +1,28 @@
+This folder is where your DIPS dataset will be located once you following the
+steps listed under "Creating the DIPS dataset" in this repository's main README.
+
+There are several filters present under filters/ that will be used by default.
+They are all based on the version of the PDB downloaded on Nov 20, 2015.
+They are listed here:
+
+buried_surface_over_500.txt - Pairs that have over 500 square Angstroms of 
+                              buried surface area upon binding.  Basically a 
+                              minimum interface size.
+nmr_res_less_3.5.txt        - Non-NMR structures with resolution below 3.5
+                              Angstroms.
+seq_id_less_30.txt          - List of structures which have less than 30% 
+                              sequence identity to DB5.
+size_over_50.0.txt          - Chains of amino acids that have at least 50 amino 
+                              acids.
+
+A list of the folders that will be created is listed here:
+
+raw/
+    pdb/               - All structures downloaded from PDB.
+interim/
+    parsed/            - All pdb pdb structures processed to pickled dataframes.
+    complexes/         - List of all possible pairs in parsed.
+    pairs/             - Dill files of indivudal pairs listed in complexes.
+    pairs-pruned/      - Dill files with filtering criteria applied.
+processed/
+    tfrecords-pruned/  - pairs-pruned converted to tfrecords.
