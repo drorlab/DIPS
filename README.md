@@ -20,7 +20,7 @@ Download the raw PDB files:
 
 ```
 rsync -rlpt -v -z --delete --port=33444 \
-rsync.rcsb.org::ftp_data/structures/divided/pdb/ ./data/DIPS/raw/pdb
+rsync.rcsb.org::ftp_data/biounit/coordinates/divided/ ./data/DIPS/raw/pdb
 ```
 
 To process the raw pdb data into associated pair files:
