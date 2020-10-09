@@ -19,6 +19,19 @@ endif
 # COMMANDS                                                                      #
 #################################################################################
 
+# Set up virtual environment for Python 2.
+init:
+	python -m pip install virtualenv
+	virtualenv -p /usr/bin/python2 venv
+	source venv/bin/activate
+
+# Set up virtual environment for Python 2.
+activate:
+	source venv/bin/activate
+
+deactivate:
+	deactivate
+
 ## Install Python Dependencies
 requirements: test_environment
 	$(PYTHON_INTERPRETER) -m pip install -U pip setuptools wheel

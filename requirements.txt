@@ -1,6 +1,9 @@
 # local package
 -e .
 
+# internal requirements
+tqdm
+
 # external requirements
 click
 Sphinx
