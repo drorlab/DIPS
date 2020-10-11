@@ -11,6 +11,7 @@ Sphinx
 coverage
 awscli
 flake8
+biopython==1.76.0
 
 
 # backwards compatibility
