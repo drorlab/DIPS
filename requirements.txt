@@ -1,5 +1,6 @@
 # local package
 -e .
+./atom3/atom3-0.1.4-py2-none-any.whl
 
 # internal requirements
 tqdm

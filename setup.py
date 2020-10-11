@@ -8,7 +8,7 @@ setup(
     author='Patricia Suriana',
     license='MIT',
     install_requires=[
-        'atom3',
+        # 'atom3',  # Use local .whl package listed in requirements.txt instead
         'easy-parallel',
         'numpy',
         'pandas',
