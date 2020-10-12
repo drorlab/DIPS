@@ -23,6 +23,12 @@ rsync -rlpt -v -z --delete --port=33444 \
 rsync.rcsb.org::biounit/coordinates/divided/ ./data/DIPS/raw/pdb
 ```
 
+Extract the raw PDB files:
+
+```
+python src/extract_raw_pdb_gz_archives.py
+```
+
 To process the raw pdb data into associated pair files:
 ```
 python src/make_dataset.py ./data/DIPS/raw/pdb ./data/DIPS/interim
