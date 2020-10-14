@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 
 def main():
-    data_dir = os.path.abspath('../data/DIPS/raw/pdb/') + '/'
+    data_dir = '../data/DIPS/raw/pdb/'
     raw_pdb_list = os.listdir(data_dir)
     for pdb_dir in raw_pdb_list:
         for pdb_gz in tqdm(os.listdir(data_dir + pdb_dir)):
