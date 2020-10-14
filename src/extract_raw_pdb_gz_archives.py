@@ -8,15 +8,15 @@ from tqdm import tqdm
 
 
 @click.command()
-@click.argument('pdb_gz_data', type=click.Path(exists=True))
-def main(pdb_gz_data):
+@click.argument('gz_data_dir', type=click.Path(exists=True))
+def main(gz_data_dir):
     """ Runs GZ extraction logic to turn raw data from
         (../raw) into extracted data ready to be analyzed by DSSP.
     """
     logger = logging.getLogger(__name__)
     logger.info('extracting raw GZ archives')
 
-    data_dir = os.path.abspath(pdb_gz_data) + '/'
+    data_dir = os.path.abspath(gz_data_dir) + '/'
     raw_pdb_list = os.listdir(data_dir)
     for pdb_dir in raw_pdb_list:
         for pdb_gz in tqdm(os.listdir(data_dir + pdb_dir)):
