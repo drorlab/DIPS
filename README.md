@@ -26,7 +26,7 @@ rsync.rcsb.org::biounit/coordinates/divided/ ./data/DIPS/raw/pdb
 Extract the raw PDB files:
 
 ```
-python src/extract_raw_pdb_gz_archives.py
+python src/extract_raw_pdb_gz_archives.py ./data/DIPS/raw/pdb
 ```
 
 To process the raw pdb data into associated pair files:

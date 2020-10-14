@@ -1,11 +1,22 @@
+import logging
 import os
 import gzip
 import shutil
+
+import click
 from tqdm import tqdm
 
 
-def main():
-    data_dir = '../data/DIPS/raw/pdb/'
+@click.command()
+@click.argument('pdb_gz_data', type=click.Path(exists=True))
+def main(pdb_gz_data):
+    """ Runs GZ extraction logic to turn raw data from
+        (../raw) into extracted data ready to be analyzed by DSSP.
+    """
+    logger = logging.getLogger(__name__)
+    logger.info('extracting raw GZ archives')
+
+    data_dir = os.path.abspath(pdb_gz_data) + '/'
     raw_pdb_list = os.listdir(data_dir)
     for pdb_dir in raw_pdb_list:
         for pdb_gz in tqdm(os.listdir(data_dir + pdb_dir)):
@@ -18,4 +29,7 @@ def main():
 
 
 if __name__ == '__main__':
+    log_fmt = '%(asctime)s %(levelname)s %(process)d: %(message)s'
+    logging.basicConfig(level=logging.INFO, format=log_fmt)
+
     main()
