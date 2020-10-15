@@ -24,6 +24,7 @@ def main(gz_data_dir):
                 _, ext = os.path.splitext(pdb_gz)
                 gzip_dir = data_dir + pdb_dir + '/' + pdb_gz
                 extract_dir = data_dir + pdb_dir + '/' + _
+                logger.info('extracting raw GZ archive: ' + gzip_dir)
                 with gzip.open(gzip_dir, 'rb') as f_in:
                     with open(extract_dir, 'wb') as f_out:
                         shutil.copyfileobj(f_in, f_out)
