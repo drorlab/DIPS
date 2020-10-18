@@ -39,6 +39,11 @@ To apply the additional filtering criteria:
 python src/prune_pairs.py ./data/DIPS/interim/pairs ./data/DIPS/filters/ ./data/DIPS/interim/pairs-pruned
 ```
 
+To apply secondary structure and carbon-alpha (CA) atom type postprocessing to the filtered pairs:
+```
+python src/postprocess_pruned_pairs.py ./data/DIPS/raw/pdb ./data/DIPS/interim/pairs-pruned ./data/DIPS/interim/pairs-postprocessed
+```
+
 To process the pair files into tfrecords:
 ```
 python src/tfrecord.py ./data/DIPS/interim/pairs-pruned ./data/DIPS/processed/tfrecords-pruned -c 8
