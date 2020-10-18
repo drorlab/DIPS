@@ -2,8 +2,8 @@
 ####################### Batch Headers #########################
 #SBATCH -p Lewis
 #SBATCH -J make_dips_dataset
-#SBATCH -t 0-02:00
-#SBATCH -mem 120G
+#SBATCH -t 0-24:00
+#SBATCH --mem 120G
 #SBATCH -N 1
 #SBATCH -n 24
 ###############################################################
