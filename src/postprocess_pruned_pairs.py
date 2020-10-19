@@ -58,10 +58,11 @@ def __should_keep(pair_filename, raw_pdb_dir):
 
 def postprocess_pruned_pair(pair_df):
     """Remove non-carbon alpha (CA) atoms from those structures with DSSP-derivable features."""
-    df0 = pair_df.df0[pair_df.df0['atom_name'].apply(lambda x: x == 'CA')]
-    df1 = pair_df.df1[pair_df.df1['atom_name'].apply(lambda x: x == 'CA')]
-    pair_df.df0 = df0
-    pair_df.df1 = df1
+    # TODO: Resolve reassignment of dataframes nested inside of complex dataframes
+    # df0 = pair_df.df0[pair_df.df0['atom_name'].apply(lambda x: x == 'CA')]
+    # df1 = pair_df.df1[pair_df.df1['atom_name'].apply(lambda x: x == 'CA')]
+    # pair_df.df0 = df0
+    # pair_df.df1 = df1
     return pair_df
 
 
