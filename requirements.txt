@@ -1,9 +1,12 @@
 # local package
 -e .
-./atom3/atom3-0.1.4-py2-none-any.whl
 
 # internal requirements
 tqdm
+tensorflow==1.15.4
+biopython==1.78
+easy-parallel-py3==0.1.6.4
+atom3-py3==0.1.4.4
 
 # external requirements
 click
@@ -11,8 +14,6 @@ Sphinx
 coverage
 awscli
 flake8
-biopython==1.76.0
-
 
 # backwards compatibility
 pathlib2

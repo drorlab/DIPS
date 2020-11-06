@@ -1,6 +1,6 @@
+import gzip
 import logging
 import os
-import gzip
 import shutil
 
 import click

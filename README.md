@@ -17,36 +17,34 @@ To use the processing and parsing code, you can run `make requirements` to obtai
 ## Creating the DIPS dataset
 
 Download the raw PDB files:
-
 ```
 rsync -rlpt -v -z --delete --port=33444 \
-rsync.rcsb.org::biounit/coordinates/divided/ ./data/DIPS/raw/pdb
+rsync.rcsb.org::ftp_data/biounit/coordinates/divided/ ./data/DIPS/raw/pdb
 ```
 
 Extract the raw PDB files:
-
 ```
-python src/extract_raw_pdb_gz_archives.py ./data/DIPS/raw/pdb
-```
-
-To process the raw pdb data into associated pair files:
-```
-python src/make_dataset.py ./data/DIPS/raw/pdb ./data/DIPS/interim
+python3 data_builder/extract_raw_pdb_gz_archives.py ./data/DIPS/raw/pdb
 ```
 
-To apply the additional filtering criteria:
+Process the raw pdb data into associated pair files:
 ```
-python src/prune_pairs.py ./data/DIPS/interim/pairs ./data/DIPS/filters/ ./data/DIPS/interim/pairs-pruned
-```
-
-To apply secondary structure and carbon-alpha (CA) atom type postprocessing to the filtered pairs:
-```
-python src/postprocess_pruned_pairs.py ./data/DIPS/raw/pdb ./data/DIPS/interim/pairs-pruned ./data/DIPS/interim/pairs-postprocessed
+python3 data_builder/make_dataset.py ./data/DIPS/raw/pdb ./data/DIPS/interim
 ```
 
-To process the pair files into tfrecords:
+Apply the additional filtering criteria:
 ```
-python src/tfrecord.py ./data/DIPS/interim/pairs-pruned ./data/DIPS/processed/tfrecords-pruned -c 8
+python3 data_builder/prune_pairs.py ./data/DIPS/interim/pairs ./data/DIPS/filters/ ./data/DIPS/interim/pairs-pruned
+```
+
+Apply secondary structure and carbon-alpha (CA) atom type postprocessing to the filtered pairs:
+```
+python3 data_builder/postprocess_pruned_pairs.py ./data/DIPS/raw/pdb ./data/DIPS/interim/pairs-pruned ./data/DIPS/interim/pairs-postprocessed
+```
+
+Process the pair files into tfrecords:
+```
+python3 src/tfrecord.py ./data/DIPS/interim/pairs-pruned ./data/DIPS/processed/tfrecords-pruned -c 8
 ```
 
 ## Reprocessing DB5 dataset

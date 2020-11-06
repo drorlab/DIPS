@@ -1,16 +1,15 @@
+import collections as col
 import logging
 import os
-import shutil
-
-import collections as col
 import re
+import shutil
 
 import atom3.database as db
 import atom3.pair as pa
 import click
 import numpy as np
-import parallel as par
 import pandas as pd
+import parallel as par
 
 
 @click.command()

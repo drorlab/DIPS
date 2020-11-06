@@ -8,7 +8,8 @@ import numpy as np
 import parallel as par
 import tensorflow as tf
 
-import tf as ut
+
+from . import tf as ut
 
 
 @click.command()
