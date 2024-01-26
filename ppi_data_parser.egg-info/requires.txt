@@ -1,0 +1,4 @@
+atom3
+easy-parallel
+numpy
+pandas

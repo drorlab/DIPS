@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+ppi_data_parser.egg-info/PKG-INFO
+ppi_data_parser.egg-info/SOURCES.txt
+ppi_data_parser.egg-info/dependency_links.txt
+ppi_data_parser.egg-info/requires.txt
+ppi_data_parser.egg-info/top_level.txt
+src/__init__.py
+src/make_dataset.py
+src/prune_pairs.py
+src/tf.py
+src/tfrecord.py

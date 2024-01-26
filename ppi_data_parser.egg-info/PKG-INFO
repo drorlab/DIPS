@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: ppi-data-parser
+Version: 0.1.0
+Summary: Data parser for protein-protein interactions.
+Author: Patricia Suriana
+License: MIT
+License-File: LICENSE
+Requires-Dist: atom3
+Requires-Dist: easy-parallel
+Requires-Dist: numpy
+Requires-Dist: pandas
